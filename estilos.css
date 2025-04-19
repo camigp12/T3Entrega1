@@ -1,0 +1,123 @@
+:root {
+    --margen: 1rem;
+    --color-fondo: linear-gradient(to right, #8bfd81ef, #b7ecf5ec);
+    --color-boton: rgb(204, 4, 97);
+    --color-boton-texto: white;
+    --color-borde: #ccc;
+    --color-sombra: rgba(0, 0, 0, 0.1);
+    --color-fondo-formulario: white;
+    --color-borde-formulario: #043962b9;
+    --borde-divs: 15px;
+    --tamaño-imagen: 79%;
+    --ancho-elemento: 23%;
+    --alto-elemento: auto;
+    --tamaño-boton: 5px 10px;
+    --sombra-boton: 2px 2px 10px;
+    --alto-formulario: 20%;
+    --top-formulario: 45%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: var(--margen);
+    background: var(--color-fondo);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    border-radius: var(--borde-divs);
+    background-color: var(--color-fondo);
+    background-color: #7c7b7f61;
+    border: 5px solid #04396294;
+}
+
+input {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+
+.camigram {
+    width: 20%;
+    padding: 3vh;
+}
+
+.b_agregar {
+    display: flex;
+    justify-content: center;
+}
+
+
+button {
+    margin: var(--margen);
+    padding: 10px 15px;
+    background-color: var(--color-boton);
+    color: var(--color-boton-texto);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formulario {
+    display: none;
+    position: absolute;
+    top: var(--top-formulario);
+    left: 50%;
+    transform: translate(-50%, -20%);
+    background-color: var(--color-fondo-formulario);
+    padding: var(--margen);
+    border: 2px solid var(--color-borde-formulario);
+    z-index: 1000;
+    box-shadow: var(--sombra-boton);
+    width: 190px;
+    height: 180px;
+}
+
+.btnGuardar {
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: var(--margen);
+
+}
+
+.elemento {
+    width: var(--ancho-elemento);
+    background-color: white;
+    border: 1px solid var(--color-borde);
+    margin: var(--margen);
+    padding: var(--margen);
+    box-shadow: var(--sombra-boton);
+    text-align: center;
+}
+
+
+.elemento img {
+    width: var(--tamaño-imagen);
+    height: 200px;
+    object-fit: cover;
+}
+
+.elemento button {
+    margin-top: var(--margen);
+    background-color: var(--color-boton);
+    color: var(--color-boton-texto);
+    border: none;
+    padding: var(--tamaño-boton);
+    border-radius: 5px;
+    cursor: pointer;
+}

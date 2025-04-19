@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camigram</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <header>
+        <img src="img/camigram.png" alt="camigram" class="camigram">
+    </header>
+    <main>
+        <section class="b_agregar">
+            <button onclick=" formularioImagen()">Agrega tu foto</button>
+        </section>
+        <section id="formulario" class="formulario">
+            <h2> Nueva foto </h2>
+            <input type="text" id="titulo" placeholder="Título"><br>
+            <input type="text" id="url" placeholder="URL imagen"><br>
+            <input type="date" id="fecha"><br>
+            <div class="btnGuardar">
+                <button onclick="agregarFoto()">Guardar</button>
+            </div>
+
+        </section>
+        <section class="contenedor" id="galeria">
+        </section>
+
+        <script>
+
+            const formularioImagen = () => {
+                const form = document.getElementById('formulario');
+                form.style.display = (form.style.display === 'block') ? 'none' : 'block';
+            };
+
+            const agregarFoto = () => {
+                const titulo = document.getElementById('titulo').value;
+                const url = document.getElementById('url').value;
+                const fecha = document.getElementById('fecha').value;
+
+                if (!titulo) {
+                    alert("Falta el título");
+                    return;
+                }
+
+                if (!url) {
+                    alert("Falta la imagen");
+                    return;
+                }
+
+                if (!fecha) {
+                    alert("Falta la fecha");
+                    return;
+                }
+
+                const contenedor = document.getElementById('galeria');
+
+                const cuadroFoto = document.createElement('div');
+                cuadroFoto.classList.add('elemento');
+
+                const h3 = document.createElement('h3');
+                h3.textContent = titulo;
+
+                const img = document.createElement('img');
+                img.src = url;
+                img.alt = titulo;
+
+                const p = document.createElement('p');
+                p.textContent = "Fecha: " + fecha;
+
+                const eliminar = document.createElement('button');
+                eliminar.textContent = "Eliminar";
+                eliminar.onclick = () => {
+                    cuadroFoto.remove();
+                };
+
+                cuadroFoto.append(h3, img, p, eliminar);
+                contenedor.append(cuadroFoto);
+
+                document.getElementById('titulo').value = '';
+                document.getElementById('url').value = '';
+                document.getElementById('fecha').value = '';
+                document.getElementById('formulario').style.display = 'none';
+            };
+        </script>
+
+    </main>
+
+
+</body>
+
+</html>
